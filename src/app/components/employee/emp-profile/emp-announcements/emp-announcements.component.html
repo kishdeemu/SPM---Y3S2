@@ -1,0 +1,50 @@
+<div style="padding: 40px; width: 100%; height: 100%">
+  <h1>Announcements Management</h1>
+  <br>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <div id="dataSet" style="height:100vh; width: 100%;" *ngIf="!isLoading">
+    <div class="container pull-left" style=" width: 100%; height: 100%;">
+      <div style="display: flex;" class="card-header">
+        <input style="width: 300px; margin-top: 10px; margin-left: 10px;" class="form-control" [(ngModel)]="search"
+          type="text" placeholder="Search" aria-label="Search">
+        <button mat-raised-button color="primary" [routerLink]="['../report']" style="margin-left: 20px;">GENERATE
+          REPORT</button>
+      </div>
+      <div class="card-body" *ngFor="let announcement of announcements | filter:search">
+        <div class="card" style="padding: 30px; border-radius: 2%; box-shadow: 5px 5px 5px #888888;">
+          <h4 class="card-title">{{announcement.title}}</h4>
+          <br />
+          <p class="card-text">{{announcement.content}}</p>
+          <br/>
+          <div class="card-text">
+            <div style="display: flex;">
+              <mat-icon style="margin-right: 10px;" aria-hidden="false" aria-label="Example home icon">event
+              </mat-icon>
+              <strong>Published Date</strong>:- {{announcement.date}}
+            </div>
+          </div>
+          <br />
+          <div class="card-text">
+            <div style="display: flex;">
+              <mat-icon class="red" *ngIf="announcement.priority === 'High'" style="margin-right: 10px;"
+                aria-hidden="false" aria-label="Example home icon">priority_high</mat-icon>
+              <mat-icon class="green" *ngIf="announcement.priority === 'Normal'" style="margin-right: 10px;"
+                aria-hidden="false" aria-label="Example home icon">low_priority</mat-icon>
+              <strong>Priotity</strong>:- {{announcement.priority}}
+            </div>
+          </div>
+          <br />
+          <div style="display: flex;">
+            <mat-icon style="margin-right: 10px;" aria-hidden="false" aria-label="Example home icon">date_range
+            </mat-icon>
+            <strong>Validity</strong>:- {{announcement.validity}}
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <br><br><br>
+  </div>
+  <br><br><br><br><br><br>
+
+</div>

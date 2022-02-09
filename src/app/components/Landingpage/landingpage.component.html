@@ -1,0 +1,75 @@
+<div style="background-color: #e0e0e0">
+  <div class="jumbotron container-fluid" [ngClass]="{ bgImage: true }">
+    <div class="container" style="margin: auto" #top>
+      <br /><br /><br /><br /><br /><br />
+      <h1 [ngClass]="{ headingsLandingPage: true }">Welcome</h1>
+      <br/><br/>
+      <h2 [ngClass]="{ subheadingsLandingPage: true }">
+        Employee Information System
+      </h2>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div style="width: 100%; display: flex; justify-content: center;">
+      <button
+        [ngClass]="{ buttonLandingPage: true }"
+        type="button"
+        (click)="scroll(middle)"
+      >
+        EXPLORE
+      </button>
+
+    </div>
+
+    <br />
+  </div>
+  <div style="padding: 20px;" class="container-fluid text-center" #middle>
+    <div class="row">
+      <div class="col-sm-6" style="padding-bottom: 10px;">
+        <div
+          class="card ms-auto me-auto cardSize custom-card"
+        >
+          <div class="card-body">
+            <h1 class="card-title">Employees</h1>
+            <img src="../../assets/images/emp.png" width="200px" alt="employee.jpeg" />
+            <br /><br /><br />
+            <a style="text-decoration: none">
+              <button
+                [ngClass]="{ buttonLandingPage: true }"
+                type="button"
+                style="font-size: 30px"
+                (click)="onEmpNavigate()"
+              >
+                LOGIN
+              </button>
+              <br />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div
+          class="card cardSize custom-card"
+        >
+          <div class="card-body">
+            <h1 class="card-title">Administrators</h1>
+            <img src="../../assets/images/adm.png" width="100px" alt="admin.jpeg" />
+            <br /><br /><br />
+            <a style="text-decoration: none">
+              <button
+                style="margin-left: 20%"
+                [ngClass]="{ buttonLandingPage: true }"
+                type="button"
+                style="font-size: 30px"
+                (click)="onAdminNavigate()"
+              >
+                LOGIN
+              </button>
+              <br />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br /><br /><br />
+  </div>
+</div>

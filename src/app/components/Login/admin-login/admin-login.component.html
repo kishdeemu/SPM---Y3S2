@@ -1,0 +1,32 @@
+<div class="container" style="position: relative">
+  <div class="row" style="padding: 30px">
+    <div class="col-lg-6 text-center" style="margin: auto">
+      <img src="../../../../assets/images/adminLoginPic.png" style="width: 100%; height: 100%;" />
+    </div>
+    <div class="col-lg-6" style="height: 100vh; vertical-align: middle">
+      <div class="custom-emp">
+        <br />
+        <h1 class="text-center" style="font-size: 50px; font-weight: 700">
+          Welcome
+        </h1>
+        <br />
+        <form #adminlogin="ngForm" (ngSubmit)="onSubmit()">
+          <mat-form-field style="width: 100%" class="example-full-width" appearance="fill">
+            <mat-label>Username</mat-label>
+            <input type="text" required id="username" name="username" #username="ngModel" [ngModel] matInput />
+          </mat-form-field>
+          <br />
+          <mat-form-field style="width: 100%" class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password" required id="pwd" name="pwd" #pwd="ngModel" [ngModel] matInput />
+          </mat-form-field>
+          <br /><br />
+          <div class="text-center">
+            <button type="submit" class="btn custom-btn-lgn">LOGIN</button>
+          </div>
+          <br />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

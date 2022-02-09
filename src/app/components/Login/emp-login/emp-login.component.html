@@ -1,0 +1,39 @@
+<div class="container" style="position: relative">
+  <div class="row" style="padding: 30px">
+    <div class="col-lg-6 text-center" style="margin: auto;">
+      <img src="../../../../assets/images/empLogin.png" style="width: 75%"/>
+    </div>
+    <div class="col-lg-6" style="height: 100vh; vertical-align: middle">
+      <div class="custom-emp">
+        <br />
+        <h1 class="text-center" style="font-size: 50px; font-weight: 700">
+          Welcome
+        </h1>
+        <br />
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+          <mat-form-field style="width: 100%" class="example-full-width" appearance="fill">
+            <mat-label>NIC</mat-label>
+            <input type="text" required id="nic" name="nic" #nic="ngModel" [ngModel] matInput />
+          </mat-form-field>
+          <br />
+          <mat-form-field style="width: 100%" class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password" required id="pwd" name="pwd" #pwd="ngModel" [ngModel] matInput />
+          </mat-form-field>
+          <br /><br />
+          <div class="row">
+            <div class="col-lg-7 text-center">
+              <button type="button" class="btn custom-btn-cnp" (click)="onNavigate()">
+                Create New Password
+              </button>
+            </div>
+            <div class="col-lg-5 text-center">
+              <button type="submit" class="btn custom-btn-lgn">LOGIN</button>
+            </div>
+          </div>
+          <br />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

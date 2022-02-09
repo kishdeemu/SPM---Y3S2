@@ -1,0 +1,67 @@
+<mat-sidenav-container>
+  <mat-sidenav style="width: 23%;" mode="side" [(opened)]="opened">
+    <div class="text-center" style="width: 100%; padding-top: 20px">
+      <img [src]="employeeDetails.imgUrl || '../../../../assets/images/dp.png'" alt="admin icon"
+        style="margin: 0; border-radius: 100%;" width="100px" height="100px" />
+      <br /><br />
+      <a [routerLink]="['account']">
+        <h3 class="text-center">{{employeeDetails.fullName}}</h3>
+      </a>
+      <p class="text-center">{{employeeDetails.designation}}</p>
+      <h5 class="text-center">{{employeeDetails.empID}}</h5>
+    </div>
+    <hr />
+    <div style="
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      ">
+      <a [routerLink]="['announcements']">View Announcements</a>
+    </div>
+    <hr />
+    <div style="
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      ">
+      <a [routerLink]="['training-programs']">View Training Programs</a>
+    </div>
+    <hr />
+    <div style="
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      ">
+      <a [routerLink]="['leave/apply']">Apply Leave</a>
+    </div>
+    <hr />
+    <div style="
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      ">
+      <a [routerLink]="['leave/view']">View Applied Leave</a>
+    </div>
+    <hr />
+    <div style="
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      ">
+      <a [routerLink] (click)="onLogout()">Logout</a>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content style="width: 100%;">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
